@@ -165,16 +165,13 @@ public class GamePanel extends JPanel implements KeyListener, MouseListener, Mou
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        // Draw background
-        // Draw player centered
-        player.drawAtPosition(g, getWidth()/2, getHeight()/2);
-        
         // Calculate camera offset
         int cameraX = (int)player.getX() - getWidth()/2;
         int cameraY = (int)player.getY() - getHeight()/2;
 
         // Draw player centered
-
+        player.drawAtPosition(g, getWidth()/2, getHeight()/2);
+        
         // Draw enemies with camera offset
         for (Enemy enemy : enemies) {
             int drawX = (int)enemy.x - cameraX - 10;
